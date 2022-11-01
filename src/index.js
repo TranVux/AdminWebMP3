@@ -82,7 +82,7 @@ addMusicForm.addEventListener("submit", (e) => {
                 thumbnailUrl: addMusicForm.thumbnail.value,
                 updateDate: Date.now(),
                 url: url,
-                views: 0
+                views: Math.ceil(Math.random() * 1000)
             }).then(() => {
                 addMusicForm.reset();
                 tempPicSinger.src = "";
