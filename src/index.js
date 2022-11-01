@@ -110,6 +110,7 @@ addMusicForm.thumbnail.addEventListener("change", (e) => {
 //initial data
 getData();
 function getData() {
+    singers = [];
     getDocs(singerRef)
         .then((snapshot) => {
             snapshot.docs.forEach((doc) => {
