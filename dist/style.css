@@ -1,0 +1,87 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+.form_add_singer_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.form_add_music_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    display: block;
+}
+
+.title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid rgb(57, 131, 229);
+    padding-left: 10px;
+    transition: all ease-in-out 0.15s;
+    margin-bottom: 15px;
+}
+
+
+input:focus {
+    outline-color: rgba(57, 132, 229, 0.43);
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid rgb(57, 131, 229);
+    padding: 5px 0 0 10px;
+    transition: all ease-in-out 0.15s;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    outline-color: rgba(57, 132, 229, 0.43);
+}
+
+
+button {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 10px;
+}
+
+#tempPic, #tempPicSinger {
+    width: fit-content;
+    height: fit-content;
+    min-width: 120px;
+    min-height: 200px;
+    border: 1px solid #ccc;
+    display: block;
+    margin-top: 68px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Firebase</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_add_singer_container">
+            <div class="form_add_singer">
+                <form id="add_singer">
+                    <div class="form_control">
+                        <div class="title">Tên ca sĩ</div>
+                        <input type="text" name="singerName" required />
+                    </div>
+                    <div class="form_control">
+                        <div class="title">Link ảnh</div>
+                        <input on type="text" name="url" required />
+                    </div>
+                    <div class="form_control">
+                        <div class="title">Mô tả</div>
+                        <textarea id="inputDes" name="desc" required></textarea>
+                    </div>
+                    <button id="btnAdd" type="submit">Thêm dữ liệu</button>
+                </form>
+            </div>
+            <img src="" alt="Nếu đúng link thì hình sẽ hiện ở đây" id="tempPic">
+        </div>
+
+        <div class="form_add_music_container">
+            <div class="form-add-singer">
+                <form id="add_music">
+                    <div class="form_control">
+                        <div class="title">Tên bài hát</div>
+                        <input type="text" name="name" required />
+                    </div>
+                    <div class="form_control">
+                        <div class="title">Link ảnh</div>
+                        <input on type="text" name="thumbnail" required />
+                    </div>
+                    <div class="form_control">
+                        <div class="title">Chọn ca sĩ</div>
+                        <select id="selector" name="selector"></select>
+                    </div>
+                    <div class="form_control">
+                        <div class="title">File nhạc</div>
+                        <input style="outline: none;" type="file" name="file" required />
+                        <audio id="tempAudio" controls src=""></audio>
+                    </div>
+                    <button disabled name="btnAddMusic" type="submit">Thêm dữ liệu</button>
+                </form>
+            </div>
+            <img src="" alt="Nếu đúng link thì hình sẽ hiện ở đây" id="tempPicSinger">
+        </div>
+    </div>
+</body>
+<script src="bundle.js"></script>
+
+</html>
