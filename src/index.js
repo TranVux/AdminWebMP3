@@ -46,8 +46,8 @@ const imagesStorageRef = ref(storage, "Images")
 const addSingerForm = document.querySelector("#add_singer");
 const addMusicForm = document.querySelector("#add_music");
 const addGenresForm = document.querySelector("#add_genres");
-const tempPic = document.querySelector("#tempPic");
-const tempPicSinger = document.getElementById("tempPicSinger");
+const tempPicSinger = document.querySelector("#tempPicSinger");
+const tempPicMusic = document.getElementById("tempPicMusic");
 
 //status of form
 let statusSingerForm = "add";
@@ -76,7 +76,7 @@ let currentMusicSelected;
 
 addSingerForm.url.addEventListener("change", (e) => {
     console.log(addSingerForm.url.value);
-    tempPic.src = addSingerForm.url.value;
+    tempPicSinger.src = addSingerForm.url.value;
 });
 
 addSingerForm.addEventListener('submit', (e) => {
@@ -87,7 +87,7 @@ addSingerForm.addEventListener('submit', (e) => {
         name: addSingerForm.singerName.value
     }).then(() => {
         addSingerForm.reset();
-        tempPic.src = "";
+        tempPicSinger.src = "";
         getData();
     })
 })
@@ -110,7 +110,7 @@ addMusicForm.addEventListener("submit", (e) => {
                     views: Math.ceil(Math.random() * 1000)
                 }).then(() => {
                     addMusicForm.reset();
-                    tempPicSinger.src = "";
+                    tempPicMusic.src = "";
                     addMusicForm.btnAddMusic.disabled = true;
                     getDataMusics();
                 })
@@ -128,9 +128,7 @@ addMusicForm.addEventListener("submit", (e) => {
             genresID: tempGenresID
         }).then(() => {
             addMusicForm.reset();
-            tempPicSinger.src = "";
-            // getData();
-            // getDataForGenres();
+            tempPicMusic.src = "";
             getDataMusics();
         }).catch((e) => {
             console.error(e);
@@ -149,7 +147,7 @@ addMusicForm.file.addEventListener("change", (e) => {
 })
 
 addMusicForm.thumbnail.addEventListener("change", (e) => {
-    tempPicSinger.src = addMusicForm.thumbnail.value;
+    tempPicMusic.src = addMusicForm.thumbnail.value;
 });
 
 //initial data
@@ -338,6 +336,9 @@ function changeStatusForButton(typeForm) {
                 selector_update_music.disabled = true;
                 addMusicForm.btnAddMusic.disabled = true;
                 addMusicForm.file.required = true;
+                tempPicMusic.src = "";
+                document.querySelector("#tempAudio").src = "";
+                addMusicForm.reset();
                 // console.log(statusSingerForm);
             } else {
                 btnAdd.innerHTML = "Cập nhật dữ liệu"
@@ -417,7 +418,7 @@ function fillFormData(curentMusic) {
     console.log(currentMusicSelected);
     addMusicForm.name.value = curentMusic[0].name;
     addMusicForm.thumbnail.value = curentMusic[0].thumbnailUrl;
-    tempPicSinger.src = addMusicForm.thumbnail.value;
+    tempPicMusic.src = addMusicForm.thumbnail.value;
     document.querySelector("#tempAudio").src = curentMusic[0].url;
     let selector_genres = addMusicForm.selector_genres;
     selector_genres[0].selected = true;
