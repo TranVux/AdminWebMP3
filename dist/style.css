@@ -12,16 +12,9 @@ body {
     box-sizing: inherit;
 }
 
-.form_add_singer_container {
+.form_add_singer_container, .form_add_music_container, .form_add_genres_container {
     display: flex;
     width: 100%;
-    justify-content: center;
-}
-
-
-.form_add_music_container {
-    width: 100%;
-    display: flex;
     justify-content: center;
 }
 
@@ -76,12 +69,28 @@ button {
     padding: 5px 10px;
 }
 
-#tempPic, #tempPicSinger {
-    width: fit-content;
-    height: fit-content;
+#tempPic, #tempPicSinger, #tempPicGenres {
+    width: 300px;
+    height: 300px;
     min-width: 120px;
     min-height: 200px;
     border: 1px solid #ccc;
     display: block;
     margin-top: 68px;
+}
+
+h3 {
+    color: red;
+}
+
+input[type="radio"] {
+    outline: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+.changeStatusForm {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
