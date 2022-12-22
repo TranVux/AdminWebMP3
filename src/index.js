@@ -107,7 +107,8 @@ addMusicForm.addEventListener("submit", (e) => {
                     updateDate: Date.now(),
                     url: url,
                     genresID: tempGenresID,
-                    views: Math.ceil(Math.random() * 1000)
+                    views: Math.ceil(Math.random() * 1000),
+                    keywords: keywordGenerator(addMusicForm.name.value)
                 }).then(() => {
                     addMusicForm.reset();
                     tempPicMusic.src = "";
@@ -125,7 +126,8 @@ addMusicForm.addEventListener("submit", (e) => {
             singerID: tempSingerID,
             singerName: tempSingerName,
             thumbnailUrl: addMusicForm.thumbnail.value,
-            genresID: tempGenresID
+            genresID: tempGenresID,
+            keywords: keywordGenerator(addMusicForm.name.value)
         }).then(() => {
             addMusicForm.reset();
             tempPicMusic.src = "";
@@ -390,7 +392,7 @@ function loadDataForSelectorMusic() {
     currentMusicSelected = musics.filter((music) => {
         return music.id === tempMusicID;
     })
-    // console.log(currentMusicSelected);
+    console.log(currentMusicSelected);
 }
 
 function getMusicID() {
@@ -439,4 +441,11 @@ function choiceValueOfCurrentMusic(selector, value) {
             return;
         }
     }
+}
+const keywordGenerator = (musicName) => {
+    const arr = []
+    for (let i = 1; i <= musicName.length; i++) {
+        arr.push(musicName.substring(0, i).toLocaleLowerCase());
+    }
+    return arr;
 }
